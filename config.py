@@ -1,19 +1,19 @@
 import os
 
 class Config:
-    
-    pass
+     pass
+SECRET_KEY=os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-
+    pass
 
 class DevConfig(Config):
     pass
-    DEBUG = True
+
+    DEBUG =True
     
-Config_options = {
-'development':DevConfig,
-'production':ProdConfig,
+config_options = {
+    'development':DevConfig,
+    'production':ProdConfig
 }
-   
+    
