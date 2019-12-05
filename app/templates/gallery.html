@@ -8,49 +8,63 @@
 </head>
 
 <div class="container">
-    <!-- Card image -->
-    <div class="view overlay">
-      <img class="card-img-top" src="https://www.makinischool.ac.ke/wp-content/uploads/2018/11/sports-2.jpg" alt="Card image cap">
-      <a>
-        <div class="mask waves-effect waves-light rgba-white-slight"></div>
-      </a>
-      <!-- Social shares button -->
-      <a class="activator mr-4"><i class="fas fa-share-alt"></i></a>
-      <!-- Title -->
-      <h4 class="card-title">Sports</h4>
-      <button>View More</button>
-    </div>
-    <hr>
-      <!-- Card image -->
-      <div class="view overlay">
-        <img class="card-img-top" src="https://www.standardmedia.co.ke/images/tuesday/kzgbqrit58wxc01j5d49c9e37a7f9.jpg" alt="Card image cap">
-        <a>
-          <div class="mask waves-effect waves-light rgba-white-slight"></div>
-        </a>
-  
-        <!-- Title -->
-        <h4 class="card-title">Drama</h4>
-        <button>View More</button>
-        <hr>
-    
-      </div>
-    
-        <!-- Card image -->
-        <div class="view overlay">
-          <img class="card-img-top" src="http://www.kisc.sc.ke/wp-content/uploads/2017/12/kisc_cool-min-e1512634864704.jpg" alt="Card image cap">
+  <div id="row">
+      <div class="col-md-4">
+          <img class="card-img-top" src="https://www.makinischool.ac.ke/wp-content/uploads/2018/11/sports-2.jpg" width="440px" height="350px" alt="Card image cap">
           <a>
             <div class="mask waves-effect waves-light rgba-white-slight"></div>
-          </a> 
+          </a>
           <!-- Social shares button -->
           <a class="activator mr-4"><i class="fas fa-share-alt"></i></a>
           <!-- Title -->
-          <h4 class="card-title">School</h4>
+          <h4 class="card-title" id="left">Sports</h4>
           <button>View More</button>
-        </div> 
-        </div>   
+        </div>
+        
+          <!-- Card image -->
+          <div class="col-md-4">
+            <img class="card-img-top" src="https://www.standardmedia.co.ke/images/tuesday/kzgbqrit58wxc01j5d49c9e37a7f9.jpg" width="440px" height="350px" alt="Card image cap">
+            <a>
+              <div class="mask waves-effect waves-light rgba-white-slight"></div>
+            </a>
+      
+            <!-- Title -->
+            <h4 class="card-title" id="left">Drama</h4>
+            <button>View More</button>
+            
+        
+          </div>
+        
+            <!-- Card image -->
+            <div class="col-md-4">
+              <img class="card-img-top" src="http://www.kisc.sc.ke/wp-content/uploads/2017/12/kisc_cool-min-e1512634864704.jpg" alt="Card image cap" width="440px" height="350px">
+              <a>
+                <div class="mask waves-effect waves-light rgba-white-slight"></div>
+              </a> 
+              <!-- Social shares button -->
+              <a class="activator mr-4"><i class="fas fa-share-alt"></i></a>
+              <!-- Title -->
+              <h4 class="card-title" id="left">School</h4>
+              <button id>View More</button>
+            </div> 
+            </div>   
+    
+  </div>
+  <style>
+    #row{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #left{
+     text-align: center;
+    }
+  </style>
+
+  </body>
+  </html>
+    
      
   
       
      
-</body>
-</html>
