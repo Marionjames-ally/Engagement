@@ -21,7 +21,7 @@ def admin():
     '''
     view root page function that returns thee index and its data
     '''
-    title = 'admins portal'  
+    title = 'admin portal'  
     
     return render_template('admin.html', title=title)
 
@@ -32,6 +32,9 @@ def parent(id):
     ''' 
     
     form = commentForm()
+    parent_Com=Parent.query.filter_by(id=id).first()
+    parent_by=parent_Com.posted_by
+    
     if form.validate_on_submit():
         body=form.body.data
         
