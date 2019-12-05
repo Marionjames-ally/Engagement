@@ -1,0 +1,38 @@
+ body{
+    /* background-image: url("https://www.makinischool.ac.ke/wp-content/gallery/academic/thumbs/thumbs_Makini-High-School-class-photo-9.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headeer{
+    padding:400px;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+  font-size: 70px;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+
+.card{
+    margin:40px;
+    padding:20px;
+    display: inline-flex;
+    padding-left:50px;
+    margin-left: 50px;
+}
+
+.future{
+    /* margin:20px; */
+}
+
+.jumbo{
+    margin-top:200px;
+}
