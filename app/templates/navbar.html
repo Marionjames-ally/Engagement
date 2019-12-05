@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Navbar</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -14,7 +16,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#"></a>
+  <!-- <a class="navbar-brand btn btn-success" href="#">Home</a> -->
+  <a class="fa fa-home nav-link btn btn-success" href="#">Home</a>
+  
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -28,30 +32,28 @@
     <!-- Links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home
+        <a class="nav-link btn btn-success" href="#">About
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+      <li class="nav-item ml-5">
+        <a class="nav-link btn btn-success" href="#">Admin</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+      <li class="nav-item ml-5">
+        <a class="nav-link btn btn-success" href="#">Parent</a>
       </li>
-
-      <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown">
+          <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Gallery
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">SPORTS</a></li>
+            <li><a href="#">DRAMA</a></li>
+            <li><a href="#">SCHOOL</a></li>
+          </ul>
         </div>
-      </li>
 
     </ul>
-    <!-- Links -->
+    
 
     
   </div>
