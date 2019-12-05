@@ -53,49 +53,4 @@
   </div>
 </div>
 
-
-{% import 'bootstrap/wtf.html' as wtf %} 
-
-<div class="container">
-  <div class="comments">
-
-    {% if comments %}
-    {% for comment in comments %}
-
-    <h2>{{comment.body}}</h2>
-    <div class="body">
-      <p class="posted">
-        <small class="text-muted"
-          >Posted on: {{comment.posted_on.strftime('%Y-%m-%d')}}</small
-        >
-      </p>
-      <p class="posted">
-        <small class="text-muted"
-          >Posted By: {{comment.posted_by}}</small
-        >
-      </p>
-    </div>
-
-    {% if parent_by==current_user.username %}
-    <a class="btn btn-outline-danger" href="{{url_for('main.delComment' , id=comment.id)}}">Delete</a>
-    {% elif comment.posted_by==current_user.username %}
-    <a class="btn btn-outline" href="{{url_for('main.delComment',id=comment.id)}}">Delete</a>
-
-    {% endif %}
-
-    {% endfor %}
-    {% else %}
-
-    <h3>There are no comments for this site</h3>
-    {% endif %}
-  </div>
-</div>
-
-<div class="container">
-    {{wtf.quick_form(form)}}
-
-</div>
-
-
-
 {% endblock content %}
