@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
+from flask_sqlalchemy import SQLAlchemy
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -11,6 +12,7 @@ login_manager.loginview = 'auth.login'
 
 bootstrap = Bootstrap()
 csrf=CSRFProtect()
+db = SQLAlchemy()
 
 def create_app(config_name):
     
