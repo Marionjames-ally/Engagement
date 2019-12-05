@@ -26,7 +26,7 @@ def admin():
     return render_template('admin.html', title=title)
 
 @main.route('/parent/<int:id>', methods = ['GET','POST'])
-def parent():
+def parent(id):
     '''
     view root page function that returns the index and its data
     ''' 
@@ -39,7 +39,7 @@ def parent():
         
         new_comment.save_comment()
         
-        return redirect(url_for('.comments', id=id))
+        return redirect(url_for('.comments'))
     
     title = 'parent portal' 
     comments=Comment.get_comments(id)   
