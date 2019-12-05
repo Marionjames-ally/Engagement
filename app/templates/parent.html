@@ -1,0 +1,101 @@
+{% block content %}
+
+<div class="container">
+  <div class="categories">
+    <div class="well well-lg">
+      <div class="dates">
+        <h1>SCHOOL DATES</h1>
+        <p>To all our parents, the school dates of the year are as follows:</p>
+      </div>
+    </div>
+
+    <div class="well well-lg">
+      <div class="dates">
+        <h1>UPDATES</h1>
+        <p>
+          During this year, the school will be involved in various categories of
+          school activities. Some various activities will be done in school
+          while others will take place outside the school environment.We highlt
+          encourage all parents to encourage their children to be involved in
+          these outdoors activities.
+        </p>
+      </div>
+    </div>
+
+    <div class="well well-lg">
+      <div class="dates">
+        <h1>PERFOMANCE</h1>
+        <p>
+          Our school has been posting excellent perfomances for the past few
+          years.The school is so proud and so grateful to all the parents for
+          all your support.We like to give you some updates of our perfomances.
+        </p>
+      </div>
+    </div>
+
+    <div class="well well-lg">
+      <div class="dates">
+        <h1>PARENT STAFF HIGHLIGHTS</h1>
+        <p>
+          As a school,we would like to ensure all parents and staff work
+          together to achieve the school objectives.Therefore,the school will be
+          conducting meetings every term .Please take note of the dates.
+        </p>
+      </div>
+    </div>
+
+    <div class="well well-lg">
+      <div class="dates">
+        <h1></h1>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% import 'bootstrap/wtf.html' as wtf %} 
+
+<div class="container">
+  <div class="comments">
+
+    {% if comments %}
+    {% for comment in comments %}
+
+    <h2>{{comment.body}}</h2>
+    <div class="body">
+      <p class="posted">
+        <small class="text-muted"
+          >Posted on: {{comment.posted_on.strftime('%Y-%m-%d')}}</small
+        >
+      </p>
+      <p class="posted">
+        <small class="text-muted"
+          >Posted By: {{comment.posted_by}}</small
+        >
+      </p>
+    </div>
+
+    {% if parent_by==current_user.username %}
+    <a class="btn btn-outline-danger" href="{{url_for('main.delComment' , id=comment.id)}}">Delete</a>
+    {% elif comment.posted_by==current_user.username %}
+    <a class="btn btn-outline" href="{{url_for('main.delComment',id=comment.id)}}">Delete</a>
+
+    {% endif %}
+
+    {% endfor %}
+    {% else %}
+
+    <h3>There are no comments for this site</h3>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container">
+    {{wtf.quick_form(form)}}
+
+</div>
+
+
+
+{% endblock content %}
