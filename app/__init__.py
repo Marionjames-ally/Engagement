@@ -4,10 +4,7 @@ from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
-<<<<<<< HEAD
-=======
 from flask_sqlalchemy import SQLAlchemy
->>>>>>> ead650357f12d65c4c2b4a543d0780ea888a908b
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -15,10 +12,7 @@ login_manager.loginview = 'auth.login'
 
 bootstrap = Bootstrap()
 csrf=CSRFProtect()
-<<<<<<< HEAD
-=======
 db = SQLAlchemy()
->>>>>>> ead650357f12d65c4c2b4a543d0780ea888a908b
 
 def create_app(config_name):
     
@@ -32,6 +26,7 @@ def create_app(config_name):
     #initializing
     bootstrap.init_app(app)
     csrf.init_app(app)
+    db.init_app(app)
     
     #registering
     from .main import main as main_blueprint
