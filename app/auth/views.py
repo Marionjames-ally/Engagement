@@ -2,12 +2,13 @@ from flask import render_template, flash,request,url_for,redirect
 from flask_login import login_user,logout_user,login_required
 from . import auth
 from .forms import LoginForm,RegistrationForm
+from ..models import User
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        # user = User(email = form.email.data, username = form.username.data,password = form.password.data)
+        user = User(email = form.email.data, username = form.username.data,password = form.password.data)
         # db.session.add(user)
         # db.session.commit()
     
