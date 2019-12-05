@@ -13,4 +13,11 @@ def index():
     
     title = 'school'
     return render_template('index.html')
-    
+
+@main.route('/about')
+def about():
+    '''
+    function that returns the about file
+
+    '''
+    return render_template('about.html')    
