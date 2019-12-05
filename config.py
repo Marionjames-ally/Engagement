@@ -1,14 +1,16 @@
 import os
 
 class Config:
-     pass
-SECRET_KEY=os.environ.get('SECRET_KEY')
+    pass
+    SECRET_KEY=os.environ.get('SECRET_KEY')
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 class ProdConfig(Config):
     pass
 
 class DevConfig(Config):
-    pass
+    # pass
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://faith:456789@localhost/engagement'
 
     DEBUG =True
     
