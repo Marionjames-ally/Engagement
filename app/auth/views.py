@@ -3,15 +3,15 @@ from flask_login import login_user,logout_user,login_required
 from . import auth
 from .forms import LoginForm,RegistrationForm
 from ..models import User
-from sqlalchemy.testing.config import db
+# from sqlalchemy.testing.config import db
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
-        db.session.add(user)
-        db.session.commit()
+        # db.session.add(user)
+        # db.session.commit()
     
         return redirect(url_for('auth.login'))
         title = "New Account"
@@ -33,19 +33,19 @@ def login():
 
 
 @auth.route('/parents_register',methods = ["GET","POST"])
-def register():
+def parents_register():
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
-        db.session.add(user)
-        db.session.commit()
+        # db.session.add(user)
+        # db.session.commit()
     
         return redirect(url_for('auth.login'))
         title = "New Account"
     return render_template('auth/parents_register.html',registration_form = form)
 
 @auth.route('/parents_login', methods = ['GET', 'POST'])
-def login():
+def parents_login():
     login_form = LoginForm()
     if login_form.validate_on_submit():
         user = User.query.filter_by(email= login_form.email.data).first()
