@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import render_template,redirect,url_for,request,abort
 from . import main
 from app import db 
@@ -7,35 +6,15 @@ from ..models import User,Admin,Parent,Comment
 from .forms import commentForm
 import datetime
 from flask_login import login_required,current_user
-=======
-<<<<<<< HEAD
-from flask import render_template
-from . import main
-=======
-from flask import render_template 
-from . import main
-# from app import db 
-# from .. import db
-# from ..models import User
-
->>>>>>> gakori
->>>>>>> master
 
 @main.route('/')
 def index():
     '''
-<<<<<<< HEAD
-    function that returns the views
-    '''
-    title = 'School'
-    return render_template('index.html', title=title)
-=======
     function that retuns the index
     '''
-    
     title = 'school'
     return render_template('index.html')
-<<<<<<< HEAD
+
 
 @main.route('/admin')
 def admin():
@@ -66,7 +45,3 @@ def parent(id):
     comments=Comment.get_comments(id)   
     
     return render_template('parent.html', title=title,comments=comments,form=form)
-=======
-    
->>>>>>> gakori
->>>>>>> master
