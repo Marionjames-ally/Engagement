@@ -13,7 +13,7 @@ class User(db.Model):
     
     @property
     def password(self):
-        raise AttributeError('You cannot read the passwordattribute')
+        raise AttributeError('You cannot read the password attribute')
     
     @password.setter
     def password(self,password):
@@ -24,3 +24,26 @@ class User(db.Model):
 
     def __repr__(self):
         return f'User {self.username}'
+
+class Admin():
+    __tablename__= 'admin'
+    
+    id = db.Column(db.Integer,primary_key = True)
+    username = db.Column(db.String(255))
+    email = db.Column(db.String(255))
+    admin_title = db.Column(db.String(255))
+    admin_content = db.Column(db.String(5000))
+    
+    def save_Admin(self):
+        db.session.add(self)
+        db.session.commit()
+        
+class Parent():
+    __tablename__='parent'
+    
+    id = db.Column(db.Integer,primary_key = True)
+    parent_title = db.Column(db.String(255))
+    parent_content = db.Column(db.String(5000))
+    
+    
+    
