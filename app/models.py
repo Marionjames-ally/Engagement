@@ -71,6 +71,8 @@ class Comment(db.Model):
     body = db.Column(db.String(255))
     posted_by=db.Column(db.String(255))
     posted_on=db.Column(db.DateTime,default=datetime.utcnow)
+    parent_id=db.Column(db.Integer,db.ForeignKey('parent.id'))
+    
     
     def save_comment(self):
         '''
@@ -94,11 +96,11 @@ class Comment(db.Model):
         db.session.delete(self)
         db.session.commit()
         
-        def __repr__(self):
-            '''
-            function that helps in dec=bugging
-            '''
-            return f'Comment {self.body}'
+    def __repr__(self):
+        '''
+        function that helps in dec=bugging
+        '''
+        return f'Comment {self.body}'
             
             
             
