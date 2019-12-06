@@ -1,23 +1,24 @@
 
-
 .headeer{
     padding:400px;
-     background-image: url("https://cdn.shopifycloud.com/hatchful-web/assets/d80321286525089fe6b5a5d4759d0efd.svg");
-     background-repeat: no-repeat;
-     background-size: cover;
+    background-image: url('http://img.transcoder.opera.com/assets/v2/4177b52bba817b79aaa2e9bd9a4cd0e8');
+    background-repeat: no-repeat;
+    background-size: cover;
      height:100vh
 }
 
 .card-title {
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   font-size: 60px;
   font-family: 'Playfair Display', serif;
   font-weight: bolder;
 }
 
 
+
 h2{
     font-family: 'Playfair Display', serif;
+    
 }
 h1,
 h2,
@@ -27,15 +28,36 @@ p {
   text-align: center;
 }
 
-.moto{
-    padding:20px;
+h2{
+    font-family: 'Playfair Display', serif;
 }
 
+.card-text{
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+.mission{
+    margin-left:300px;
+    border:1px solid black;
+    padding:10px;
+}
+
+.vision{
+    margin-left:300px;
+    padding:10px;
+    border:1px solid black;
+}
+
+.moto{
+    padding:10px;
+    border:1px solid black;
+}
 h1{
     font-family: 'Playfair Display', serif;
-   
-    /* font-size: 40px; */
 }
+
+
 .future{
     padding-top: 50px;
 }
@@ -53,14 +75,21 @@ h4{
     font-size: larger;
     font-weight: bolder;
 }
-.card{
-    margin:40px;
-    padding:20px;
+.all{
     display: inline-flex;
-    padding-left:50px;
-    margin-left: 50px;
-}
-
+    justify-content: space-between;
+    margin: 50px;
+        /* border: 1px solid #c3c3c3; */
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        display: inline-flex;
+        
+      }
+      
 .jumbo{
     margin-top:100px;
 }
