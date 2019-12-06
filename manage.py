@@ -3,7 +3,7 @@ from flask_script import Manager,Server,Shell
 from app.models import User,Admin,Parent,Comment
 from flask_migrate import Migrate,MigrateCommand
 
-app = create_app('development')
+app = create_app('productio')
 
 migrate = Migrate(app,db)
 manager = Manager(app)
