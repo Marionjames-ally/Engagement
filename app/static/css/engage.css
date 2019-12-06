@@ -1,26 +1,58 @@
- body{
-    /* background-image: url("https://www.makinischool.ac.ke/wp-content/gallery/academic/thumbs/thumbs_Makini-High-School-class-photo-9.jpg"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 .headeer{
     padding:400px;
+     background-image: url("https://cdn.shopifycloud.com/hatchful-web/assets/d80321286525089fe6b5a5d4759d0efd.svg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     height:100vh
 }
 
-h1 {
+.card-title {
   border-bottom: 1px solid black;
-  font-size: 70px;
+  font-size: 60px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
 }
 
+
+h2{
+    font-family: 'Playfair Display', serif;
+}
 h1,
 h2,
 h3,
+h4,
 p {
   text-align: center;
 }
 
+.moto{
+    padding:20px;
+}
 
+h1{
+    font-family: 'Playfair Display', serif;
+   
+    /* font-size: 40px; */
+}
+.future{
+    padding-top: 50px;
+}
+h4{
+    padding-right:50px;
+}
+
+#img{
+    height: 20px;
+    width:20px;
+}
+.ma{
+    text-align:left;
+    font-family: 'Playfair Display', serif;
+    font-size: larger;
+    font-weight: bolder;
+}
 .card{
     margin:40px;
     padding:20px;
@@ -29,10 +61,28 @@ p {
     margin-left: 50px;
 }
 
-.future{
-    /* margin:20px; */
+.jumbo{
+    margin-top:100px;
 }
 
-.jumbo{
-    margin-top:200px;
+.test{
+    margin:40px;
+}
+
+.float{
+    padding-top: 150px;
+}
+
+.footer{
+    text-align: center;
+}
+
+.col-md-12{
+    margin:10px 0;
+    padding: 5vh;
+    font-size: 30px;
+}
+
+.flaks{
+    padding-top: 100px;
 }
