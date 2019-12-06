@@ -19,6 +19,7 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(255), unique=True, index=True)
     date_joined = db.Column(db.DateTime,default=datetime.utcnow)
     pass_secure = db.Column(db.String(255))
+    comment=db.relationship('Comment',backref='user',lazy='dynamic')
     parent=db.relationship('Parent', backref='Parent', lazy='dynamic')
     
     @property
@@ -57,7 +58,7 @@ class Parent(db.Model):
     posted_on=db.Column(db.DateTime,default=datetime.utcnow)
     posted_by=db.Column(db.String(255))
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
-    comment=db.relationship('Comment',backref='comment',lazy='dynamic')
+    
     
     def save_parent(self):
         db.session.add(self)
@@ -71,7 +72,7 @@ class Comment(db.Model):
     body = db.Column(db.String(255))
     posted_by=db.Column(db.String(255))
     posted_on=db.Column(db.DateTime,default=datetime.utcnow)
-    parent_id=db.Column(db.Integer,db.ForeignKey('parent.id'))
+    user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     
     
     def save_comment(self):
@@ -81,12 +82,11 @@ class Comment(db.Model):
         db.session.add(self)
         db.session.commit()
         
-    @classmethod
-    def get_comments(cls,id):
+    def get_comments():
         '''
         function that get comments for a parent 
         '''
-        comments =  Comment.query.filter_by(parent_id=id).all()
+        comments =  Comment.query.all()
         return comments
     
     def delete_comment(self):

@@ -53,7 +53,7 @@
             <a
               class="fa fa-group nav-link btn btn-success"
               style="font-weight: bolder;"
-              href="#"
+              href="{{url_for('main.about')}}"
               >About
               <span class="sr-only">(current)</span>
             </a>
@@ -75,14 +75,14 @@
             >
           </li>
           <div class="dropdown">
-            <button
-              class="fa fa-image btn btn-success dropdown-toggle"
-              style="color: whitesmoke; font-weight: bolder;"
-              type="button"
-              data-toggle="dropdown"
-            >
-              Gallery <span class="caret"></span>
-            </button>
+              <li class="nav-item ml-5">
+                  <a
+                    class="fa fa-lock nav-link btn btn-success"
+                    style="color: whitesmoke; font-weight: bolder;"
+                    href="{{url_for('main.gallery')}}"
+                    >Gallery</a
+                  >
+                </li>
             <ul class="dropdown-menu">
               <li>
                 <a style="font-family: 'Noto Sans JP', sans-serif;" href="#"
@@ -101,6 +101,15 @@
               </li>
             </ul>
           </div>
+
+          <li class="nav-item ml-5">
+              <a
+                class="fa fa-lock nav-link btn btn-success"
+                style="color: whitesmoke; font-weight: bolder;"
+                href="{{url_for('main.photos')}}"
+                >Photos</a
+              >
+            </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

@@ -1,47 +1,92 @@
-{% extends 'base.html' %}
-
+{% include 'navbar.html' %} 
 {% block content %}
 
 <div class="container">
   <div class="categories">
     <div class="well well-lg">
       <div class="dates">
-        <h1>SCHOOL DATES</h1>
-        <p>The school dates are as follows:</p>
+        <h1>SCHOOL DATES</h1><br>
+        <p><strong> The school dates are as follows:</strong></p>
+        <table >
+            <tr>
+             <th>School Holidays</th> 
+             <th>Starts</th>
+             <th>Finishes/Ends</th>
+            </tr>
+            <tr>
+                <td>Term 1 Holidays</td>
+                <td>6<sup>th</sup> January 2020 (opening)</td>
+                <td>10<sup>th</sup> Apr 2020 (closing)</td>
+            </tr>
+            <tr>
+               <td>Term 1 Half Term</td> 
+               <td>17<sup>th</sup> Feb 2020</td>
+               <td>21<sup>St</sup> Feb 2020</td>
+            </tr>
+            <tr>
+                <td>Term 2 Holidays</td> 
+                <td>4<sup>th</sup> May 2020 (opening)</td>
+                <td>7<sup>th</sup> Aug 2020 (closing)</td>
+             </tr>
+            <tr>
+                <td>Term 2 Half Term</td>
+                <td>15<sup>th</sup> Jun 2020</td>
+                <td>19<sup>th</sup> Jun 2020</td>
+            </tr>
+            <tr>
+                <td>Term 3 Holidays</td> 
+                <td>31<sup>St</sup> Aug 2020 (opening)</td>
+                <td>30<sup>th</sup> Oct 2020 (closing)</td>
+             </tr>
+             <tr>
+                <td>KCSE</td> 
+                <td>6<sup>th</sup> Nov 2020 </td>
+                <td>30<sup>th</sup> Nov 2020 </td>
+             </tr>
+        </table>
       </div>
-    </div>
-
+    </div><br><br>
     <div class="well well-lg">
       <div class="dates">
         <h1>UPDATES</h1>
-        <p></p>
-      </div>
+        <ul>
+        <li><strong>The prize giving day is scheduled to be on 6<sup>th</sup> of March 2020. <br> Make a date and don't miss out. All the candidates are Invited and parents together <br> with friends are all welcome so we celebrate our students success together.</strong></li><br>
+        <li><strong> Forms 1,2 & 3 have been given assignments kindly ensure the do the teachers work.</li><br>
+        </ul>
+        <h5>Form 3 Students are expected back with the following Setbooks:</h5>
+        <ol>
+            <li><em> The Pearl</em></li><br>
+            <li><em>BLOSSOMS OF THE SAVANNAH</em></li><br>
+            <li><em>A DOLL’S HOUSE</em></li><br>
+            <li><em>Chozi la Heri</em></li><br>
+            <li><em>Kigogo</em></li><br>
+            <li><em> Tumbo Lisiloshiba na Hadithi Nyingine</em></li><br>
+        </ol>
     </div>
-
+    </div><br><br>
     <div class="well well-lg">
       <div class="dates">
         <h1>SCHOOL ACTIVITIES</h1>
         <p>All staff should take note of all school activities for conviniency.</p>
         <ul>
-          <li>Science activities</li>
-          <li>Craft Activities</li>
-          <li>Games</li>
-          <li>Trips</li>
+          <li>Science activities</li><br>
+          <li>Craft Activities</li><br>
+          <li>Games</li><br>
+          <li>Trips</li><br>
         </ul>
-        please ensure the parents are informed early about the activities so as to make payments as soon as possible.
+      <p>  please ensure the parents are informed early about the activities so as to make payments as soon as possible.</p>
       </div>
-    </div>
-
+    </div><br><br>
     <div class="well well-lg">
       <div class="dates">
         <h1>STAFF ACTIVITIES</h1>
         <p> The staff will be involved in the folloring activities:
           <p>GAMES</p>
           <ul>
-            <li>Team Juggling</li>
-            <li>Introduce Your Partner</li>
-            <li>Beach Ball Questions</li>
-            <li>Staff Bingo</li>
+            <li>Team Juggling</li><br>
+            <li>Introduce Your Partner</li><br>
+            <li>Beach Ball Questions</li><br>
+            <li>Staff Bingo</li><br>
           </ul>
         </p>
       </div>
@@ -49,4 +94,46 @@
   </div>
 </div>
 
+<a class="btn btn-primary" href="{{url_for('main.comments')}}">View comments</a>
 {% endblock content %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #DDDDDD;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #AAAAAA;
+    }
+    h5{
+        font-size: 30px;
+    }
+    h1,h5,p{
+        text-align: center;
+    }
+    ul,ol{
+        text-align: center;
+        list-style-position: inside;
+    }
+    ul,li{
+        justify-items: center;
+    }
+    .dates{
+    font-size: 18px;
+    }
+ 
+   body{
+   background-image: url("http://img.transcoder.opera.com/assets/v2/4177b52bba817b79aaa2e9bd9a4cd0e8");
+   background-repeat: no-repeat;
+   color: white;
+   background-attachment:fixed ;
+   background-size: cover;
+    }
+    </style>
+    

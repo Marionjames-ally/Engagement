@@ -24,32 +24,34 @@ def admin():
     '''
     title = 'admin portal'  
     
-    return render_template('admin.html', title=title,current_user=current_user)
+    return render_template('admin.html', title=title)
 
 @main.route('/parent')
 @login_required
 def parent():
     '''
     view root page function that returns the index and its data
-    ''' 
+    '''
+    title = 'parent portal'    
     
-    # form = commentForm()
-    # parent_Com=Parent.query.filter_by(id=id).first()
-    # parent_by=parent_Com.posted_by
+    return render_template('admin.html')
+
+@main.route('/comments/', methods=['GET','POST'])
+@login_required
+def comments():
     
-    # if form.validate_on_submit():
-    #     body=form.body.data
+    form = commentForm()
+    
+    if form.validate_on_submit():
+        body=form.body.data
         
-    #     new_comment=Comment(body=body,posted_by=current_user.username,parent_id=id)
+        new_comment=Comment(body=body,posted_by=current_user.username,user_id=current_user.id)
         
-    #     new_comment.save_comment()
-        
-    #     return redirect(url_for('.comments'))
+        new_comment.save_comment()        
+        return redirect(url_for('main.comments'))
     
-    # title = 'parent portal' 
-    # comments=Comment.get_comments(id)   
-    
-    return render_template('parent.html',current_user=current_user)
+    comments=Comment.get_comments()
+    return render_template('comments.html',comments=comments,form=form)
 
 @main.route('/photos')
 def photos():
@@ -60,3 +62,8 @@ def photos():
 def gallery():
     
     return render_template('gallery.html')
+
+@main.route('/about')
+def about():
+    
+    return render_template('about.html')

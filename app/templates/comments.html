@@ -1,0 +1,28 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content%}
+<div class="container">
+    {{wtf.quick_form(form)}}
+</div>
+
+<div class="container">
+  <div class="comments">
+   {% for comment in comments %}
+
+    <h2>{{comment.body}}</h2>
+    <div class="body">
+      <p class="posted">
+        <small class="text-muted"
+          >Posted on: {{comment.posted_on.strftime('%Y-%m-%d')}}</small
+        >
+        <small class="text-muted"
+          ></small>
+      </p>
+      
+
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

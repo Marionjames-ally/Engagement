@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% include 'navbar.html' %}  {% block content %}
 
 <div class="container">
   <div class="categories">
@@ -55,17 +53,19 @@
   </div>
 </div>
 
+
 {% endblock content %}
+
 <style>
-body{
-  background-image: url("https://pikwizard.com/photos/7d792ebaa7177b9b5d79b4cc110e2c4a-m.jpg");
-}
+  body {
+    background-image: url("https://pikwizard.com/photos/7d792ebaa7177b9b5d79b4cc110e2c4a-m.jpg");
+  }
 
-h1{
-  color:whitesmoke;
-}
+  h1 {
+    color: whitesmoke;
+  }
 
-p{
-  color: whitesmoke;
-}
+  p {
+    color: whitesmoke;
+  }
 </style>
