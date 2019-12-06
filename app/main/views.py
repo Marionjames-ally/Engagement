@@ -13,19 +13,21 @@ def index():
     function that retuns the index
     '''
     title = 'school'
-    return render_template('index.html')
+    return render_template('index.html',current_user=current_user)
 
 
 @main.route('/admin')
+@login_required
 def admin():
     '''
     view root page function that returns thee index and its data
     '''
     title = 'admin portal'  
     
-    return render_template('admin.html', title=title)
+    return render_template('admin.html', title=title,current_user=current_user)
 
 @main.route('/parent')
+@login_required
 def parent():
     '''
     view root page function that returns the index and its data
@@ -47,4 +49,14 @@ def parent():
     # title = 'parent portal' 
     # comments=Comment.get_comments(id)   
     
-    return render_template('parent.html')
+    return render_template('parent.html',current_user=current_user)
+
+@main.route('/photos')
+def photos():
+    
+    return render_template('photos.html')
+
+@main.route('/gallery')
+def gallery():
+    
+    return render_template('gallery.html')
