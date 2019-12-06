@@ -2,9 +2,10 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/engage.css')}}">
 <div class="overlay-1">
-<div class="container-1">
-  <div class="row">
+<div class="container jumbotron">
+  <div class="row card">
     <div class="col-md-2"> </div>
     <div class="col-md-8">
       <!--Flash message -->
